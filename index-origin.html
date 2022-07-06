@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>html2css-test</title>
+    <style>
+        * {box-sizing: border-box;}
+        .main {display: flex; flex-direction: row; justify-content: center; align-items: center;padding: 1rem 0;}
+        .txt {display: inline-block ;border: 0.6rem solid #48a151; min-height: 70vh;width:43vw; border-radius: 0.5rem;}
+        .btnlist {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:  center;
+
+        }
+        .btn {border-radius: 0.3rem ;border: 0.3rem solid #48a151;font-size: 1.2rem; margin: 1rem 0; padding: 0.3rem 1.2rem; ; color: #48a151;}
+        .btn:hover {border: 0.6rem solid #48a151; }
+        .txt-header {font-size: 0.7rem; color: #48a151; padding-left: 1rem; line-height: 1.7rem;border-bottom: 0.3rem solid #48a151;}
+        .txt-main {border: 0; outline: 0; resize: none; width: 100%; height: calc(68vh - 2rem)}
+        .arrow-box { display: inline-block; position: absolute; top: 55vh}
+        .arrow {width: 100%; height: 32vh; }
+        .arrow-down-txt { display: inline-block; position: absolute; bottom: 7vh; font-size: 1.5rem; color: #48a151;}
+        .most-shine {position: fixed; width: 100%; bottom: 0; line-height: 2.5rem; color: #48a151;; text-align: center; font-size: 1rem}
+        .most-shine .star {color: red; font-size: 1.8rem; padding: 0 1rem; }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="txt">
+            <div class="txt-header">
+                html代码
+            </div>
+            <textarea id="i" class="txt-main" ></textarea>
+        </div>
+        <div class="btnlist">
+            <div style="min-width: 7rem;"></div>
+            <div class='btn' onclick="clr()">清除</div>
+            <div class="btn" onclick="i2o()">转化</div>
+
+            <div class="arrow-box">
+                <img class="arrow" src="./arrow.png" width="">
+
+            </div>
+
+            <div class="arrow-down-txt">
+                一点就完成
+            </div>
+        </div>
+        <div class="txt">
+            <div class='txt-header' >
+                生成的css结构
+            </div>
+            <textarea id="o" class="txt-main"></textarea> 
+        </div>
+    </div>
+    <div class="most-shine">
+        该页图稿为国内顶尖设计师 <span class="star">疯狂的大叔 !!!</span> (qq: 1392429292) 亲自操刀设计
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="html2css.js"></script>
+    <script>
+        function i2o() { $('#o').val(html2css($('#i').val())); }
+        function clr() { $('#o').val(''); $('#i').val('')}
+    </script>
+</body>
+</html>
