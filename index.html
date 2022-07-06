@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML to CSS</title>
+<style>
+body{font-family:"Menlo","Meslo LG",monospace;color:#333;font-size:14px;background:#f7f7f7;}
+*{box-sizing:border-box;}
+.main{display:flex;flex-direction:row;justify-content:center;align-items:center;padding:20px 0px;}
+.btnlist{display:flex;flex-direction:column;justify-content:center;align-items:center;}
+.btnlist .btn{background:#48a151;color:#fff;font-size:16px;padding:6px 30px;margin:10px 25px;cursor:pointer;border-radius:4px;}
+.btnlist .btn:hover{background:#388140;}
+.xx_box{width:43vw;background:#fff;}
+.xx_box .txt-header{padding:10px 20px;font-size:14px;color:#272921;border-bottom:2px solid #0e0e0e;margin:0;position:relative;text-indent:80px;background:#e9e9e9;border-radius:6px 6px 0px 0px;}
+.xx_box .txt-header:before{content:"";position:absolute;border-radius:50%;background:#fc625d;width:12px;height:12px;left:20px;top:14px;box-shadow:20px 0 #fdbc40,40px 0 #35cd4b;z-index:2;}
+.xx_box .txt-main{border:0;outline:0;resize:none;width:100%;height:80vh;padding:22px;line-height:1.4;font-family:"Menlo","Meslo LG",monospace;border-radius:0px 0px 6px 6px;}
+.txt-main_w{background:#272921;color:#eeeeee;}
+.txt-main_g{background:#272921;color:#94e400;}
+</style>
+</head>
+
+<body>
+<div class="main">
+    <div class="xx_box">
+        <h2 class="txt-header">html代码</h2>
+        <textarea id="i" class="txt-main txt-main_w" ></textarea>
+    </div>
+    <div class="btnlist">
+        <div class="btn" onclick="i2o()">转化</div>
+        <div class='btn' onclick="clr()">清除</div>
+    </div>
+    <div class="xx_box">
+        <h2 class="txt-header">生成的css结构</h2>
+        <textarea id="o" class="txt-main txt-main_g"></textarea>
+    </div>
+</div>
+<script src="jquery.js"></script>
+<script src="html2css.js"></script>
+<script>
+    function i2o() { $('#o').val(html2css($('#i').val())); }
+    function clr() { $('#o').val(''); $('#i').val('')}
+</script>
+</body>
+</html>
