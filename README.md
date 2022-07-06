@@ -8,8 +8,14 @@ html2css a simple html page tool for convert html to css code, open index.html i
 
 
 
+
 # about
 
 the css style of index.html is writen by my friend crazy uncle, index-origin.html also depend on crazy uncle design
 
 文件 index.html 的样式是 我的朋友 疯狂的大叔 所写, index-origin.html 也是基于疯狂的大叔的草图, 完整复刻算是我个人卖萌行为
+
+# preview
+
+![页面预览](https://github.com/leplexion/html2css/blob/main/index.html.png?raw=true)
+![原版图片预览](https://github.com/leplexion/html2css/blob/main/index-origin.html.png?raw=true)
